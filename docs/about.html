@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>roleTransition - Transition Diagrams</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">roleTransition</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./about.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Transition Diagrams</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Transition Diagrams</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+A high-level overview of the transition includes a knowledge transfer through embedded systems, data pipelines and parameterized reports, bypassing the need for intensive one-on-one training, and reinventing the wheel historically accompanied by each transition. ::: {#fig-simple}
+<style>
+  .mermaid {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+</style>
+<div style="margin: 0; padding: 0;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '18px', 'padding': '0', 'margin': '0'}}}%%
+%%| fig-cap: "Transition Strategy Overview"
+
+graph LR
+    A[Senior Scientist]:::main
+    B[Transition Plan]:::main
+    C[Senior Programmer-Analyst]:::main
+
+    A --&gt;|Initiate Transition| B
+    B --&gt;|Enhanced Technical Operations| C
+
+    B --&gt; D[Automation Strategies]:::activity
+    D --&gt; D1[Automate Data Processes]:::activity
+    D --&gt; D2[Advanced Remote Sensing]:::activity
+    D --&gt; D3[Integration of Technologies]:::activity
+
+    B --&gt; E[Knowledge Transfer]:::activity
+    E --&gt; E1[Embed Expertise in Systems]:::activity
+    E --&gt; E2[Ensure Reproducibility]:::activity
+
+    B --&gt; F[Address Historical Challenges]:::activity
+    F --&gt; F1[Structured Tapering Strategy]:::activity
+    F --&gt; F2[Institutionalize Code-First Method]:::activity
+
+    B --&gt; G[Leadership &amp; Administrative Transitions]:::activity
+    G --&gt; G1[Transfer GIS Leadership]:::activity
+    G --&gt; G2[Provide Ecological Guidance]:::activity
+    G --&gt; G3[Facilitate Vegetation Ecology Transition]:::activity
+
+    B --&gt; H[Strategic Expansion of Role]:::activity
+    H --&gt; H1[Leverage Analytical &amp; Development Expertise]:::activity
+    H --&gt; H2[Enhance Cross-Departmental Communication]:::activity
+    H --&gt; H3[Integrate AI Models]:::activity
+    H --&gt; H4[Provide Redundancy in Database Administration]:::activity
+
+    H --&gt; I[Reciprocal Support Arrangements]:::activity
+    I --&gt; I1[Ensure Continuity in Water Department]:::activity
+    I --&gt; I2[Provide Backup Specialists]:::activity
+
+    classDef main fill:#f9f,stroke:#333,stroke-width:2px,font-size:18px
+    classDef role fill:#ff9,stroke:#333,stroke-width:2px,font-size:18px
+    classDef tool fill:#ccf,stroke:#333,stroke-width:2px,font-size:18px
+    classDef activity fill:#fff,stroke:#333,stroke-width:2px,font-size:18px
+
+    style A fill:#f9f,stroke:#333,stroke-width:4px
+    style C fill:#ff9,stroke:#333,stroke-width:4px
+    style B fill:#9ff,stroke:#333,stroke-width:2px
+    
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Transition Overview :::</p>
+<hr>
+<div id="fig-simple" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">
+graph LR
+
+    A[Data Scientist]:::main
+
+    A --&gt;|Serves As| B[DevOps]:::role
+    A --&gt;|Serves As| D[Data Engineer]:::role
+    A --&gt;|Serves As| F[Modeler]:::role
+
+    A --&gt;|Collaborates With| E[Senior Ecologist]:::role
+    E --&gt;|Conducts| L[Research and Experiments]:::activity
+    
+    A --&gt;|Collaborates With| H[Senior Hydrologist]:::role
+    H --&gt;|Performs| AD[Groundwater Modeling]:::activity
+    H --&gt;|Directs| RA[Research Assistant]:::role
+    
+    A --&gt;|Collaborates With| RA
+    RA --&gt;|Flies UAVs for| DEM[DEMs and Vegetation Mapping]:::activity
+    DEM --&gt;|Cataloged in| AIS[ArcGIS Image Server]:::tool
+    
+    A --&gt;|Collaborates With| G[GIS Analyst]:::role
+    G --&gt;|Manages| P[ArcGIS Enterprise]:::tool
+    P --&gt;|Configures| Q[ArcGIS Enterprise Federated Servers]:::activity
+    P --&gt;|Manages| R[ArcGIS Server Sites]:::activity
+    P --&gt;|Monitors| S[Server Health and Performance]:::activity
+    P --&gt;|Implements| T[Security Protocols]:::activity
+    P --&gt;|Coordinates| U[Backup and Recovery]:::activity
+
+    A --&gt;|Collaborates With| C[Database Administrator]:::role
+    C --&gt;|Manages| J[Databases]:::activity
+
+    A --&gt;|Develops| AC[Decision Support Tools]:::activity
+    
+    A --&gt;|Develops| H1[R and Python Tools]:::tool
+    H1 --&gt;|Includes| AA[Earth Engine Python API]:::tool
+    AA --&gt;|Performs| AB[Remote Sensing Analysis]:::activity
+    
+    A --&gt;|Assists/Advises| WD[Water Director]:::role
+    A --&gt;|Directed by| ISD[Information Services Director]:::role
+
+    H1 --&gt;|Linked to| B
+    H1 --&gt;|Linked to| D
+    H1 --&gt;|Linked to| F
+    H1 --&gt;|Linked to| SM
+
+    B --&gt;|Automates Processes| I[CI/CD Pipelines]:::activity
+    D --&gt;|Builds| K[Data Pipelines]:::activity
+    F --&gt;|Develops| SM[Statistical Models]:::activity
+    F --&gt;|Develops| NM[Numerical/Spatial Models]:::activity
+    NM --&gt;|Linked to|AD 
+    
+    classDef main fill:#f9f,stroke:#333,stroke-width:2px
+    classDef role fill:#ff9,stroke:#333,stroke-width:2px
+    classDef tool fill:#ccf,stroke:#333,stroke-width:2px
+    classDef activity fill:#fff,stroke:#333,stroke-width:2px,font-size:16px
+    linkStyle 0 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 1 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 2 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 3 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 4 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 5 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 6 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 7 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 8 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 9 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 10 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 11 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 12 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 13 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 14 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 15 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 16 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 17 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 18 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 19 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 20 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 21 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 22 stroke:#0f0,stroke-width:2px,fill:none
+    linkStyle 23 stroke:#0f0,stroke-width:2px,fill:none
+
+</pre>
+</div>
+<p>Data Scientist (Senior Programmer-Analyst) Role and Collaborations</p>
+</div>
+</div>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;1: Role Alignment</figcaption>
+</figure>
+</div>
+<hr>
+<div id="fig-simple" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+
+G{Github}:::github --&gt; R(R scripts):::rscript
+G --&gt; TR(R _targets pipeline):::target
+G --&gt; eePy(Python Earth Engine):::earthEngine
+eePy --&gt; TR
+
+LAH(LADWP Hydro) --&gt; R
+R --&gt; MW[Monitoring Wells]:::monitoring --&gt; OV(OVGA):::ovga
+R --&gt; SW[Surface Water Flows]:::surfaceWater --&gt; OV
+R --&gt; PR[Production Volumes]:::production --&gt; OV
+R --&gt; pHYD[Parameterized Hydro Report]:::hydroReport
+
+ICH(Inyo Hydro) --&gt; Arc(ArcGIS-Python):::arcgis
+Arc --&gt; TR
+
+LAB(LADWP Bio) --&gt; TR
+ICB(Inyo Bio) --&gt; TR
+
+TR --&gt; pBIO[Parameterized Vegetation Report]:::bioReport
+TR --&gt; sAP[Shiny Application]:::shinyApp
+
+G --&gt; D(Mitigation Revegetation Projects):::mitigation --&gt; mBIO[Parameterized Revegetation Report]:::mitigationReport
+
+G --&gt; eePy --&gt; FL(Flooded Acreage App):::floodedApp
+
+classDef github fill:#ffcc00,stroke:#333,stroke-width:2px;
+classDef rscript fill:#ccffcc,stroke:#333,stroke-width:2px;
+classDef target fill:#ffcccc,stroke:#333,stroke-width:2px;
+classDef earthEngine fill:#ccccff,stroke:#333,stroke-width:2px;
+classDef monitoring fill:#ffffcc,stroke:#333,stroke-width:2px;
+classDef ovga fill:#ffccff,stroke:#333,stroke-width:2px;
+classDef surfaceWater fill:#ccffff,stroke:#333,stroke-width:2px;
+classDef production fill:#ffc0cb,stroke:#333,stroke-width:2px;
+classDef hydroReport fill:#e6e6fa,stroke:#333,stroke-width:2px;
+classDef arcgis fill:#add8e6,stroke:#333,stroke-width:2px;
+classDef bioReport fill:#98fb98,stroke:#333,stroke-width:2px;
+classDef shinyApp fill:#ffb6c1,stroke:#333,stroke-width:2px;
+classDef mitigation fill:#ffdead,stroke:#333,stroke-width:2px;
+classDef mitigationReport fill:#ffd700,stroke:#333,stroke-width:2px;
+classDef floodedApp fill:#afeeee,stroke:#333,stroke-width:2px;
+
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;2: Immediate focus: Create Github repositories associated with Water Department operations, instituting reproducible data pipelines, continuously integrated and deployed data applications and parameterized reports.</figcaption>
+</figure>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
