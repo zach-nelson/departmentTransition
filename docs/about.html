@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Department Transition - Transition overview, role alignment and stepwise plan</title>
+<title>Department Transition - Diagrams</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -90,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./about.html" rel="" target="" aria-current="page">
- <span class="menu-text">Transition overview, role alignment and stepwise plan</span></a>
+ <span class="menu-text">Diagrams</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
@@ -104,14 +104,20 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#transition-overview-role-alignment-production-data-pipelines-gis-integration-and-causal-modeling-templates" id="toc-transition-overview-role-alignment-production-data-pipelines-gis-integration-and-causal-modeling-templates" class="nav-link active" data-scroll-target="#transition-overview-role-alignment-production-data-pipelines-gis-integration-and-causal-modeling-templates">Transition overview, role alignment, production data pipelines, GIS integration and causal modeling templates</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Transition overview, role alignment and stepwise plan</h1>
+<h1 class="title">Diagrams</h1>
 </div>
 
 
@@ -126,6 +132,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="transition-overview-role-alignment-production-data-pipelines-gis-integration-and-causal-modeling-templates" class="level1">
+<h1>Transition overview, role alignment, production data pipelines, GIS integration and causal modeling templates</h1>
 <div id="fig-simple" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <div class="cell">
@@ -185,7 +193,7 @@ graph LR
 </div>
 </div>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;1: Transitioning departments includes extensive automation of historically manual methods, knowledge transfer through embedded systems, data pipelines and parameterized reports, a phased hand-off of leadership responsibilities in certain areas, followed by an expansion of data science, DevOps, remote sensing and GIS integration across historically siloed systems.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;1: Priority #1 - Convey overview of strategic plan including this transition that includes extensive automation of historically manual methods, knowledge transfer through embedded systems, data pipelines and parameterized reports, a phased hand-off of leadership responsibilities in certain areas, followed by an expansion of data science, DevOps, remote sensing and GIS integration across historically siloed systems.</figcaption>
 </figure>
 </div>
 <hr>
@@ -279,7 +287,7 @@ graph LR
 </div>
 </div>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;2: Role Alignment associated with this transition allows working closely with both County GIS and IT Teams while continuing close collaboration with Senior Scientific staff and Water Department leadership.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;2: Priority # 2 - Role Alignment associated with this transition allows working closely with both County GIS and IT Teams while continuing close collaboration with Senior Scientific staff and Water Department leadership.</figcaption>
 </figure>
 </div>
 <hr>
@@ -289,47 +297,121 @@ graph LR
 <div class="cell-output-display">
 <div>
 <div>
+
 <pre class="mermaid mermaid-js">graph LR
+    %% Main Nodes
+    WD[Water Dept GIS Assets]
+    SDE[Data Store]
+    ImgServer[Image Server]
+    ArcServer[ArcGIS Server]
+    ArcPython[ArcGIS Python API]
+    RBridge[R-ArcGIS Bridge]
+    GeoApps[Geospatial Applications]
+    Quickbase[Quickbase]
 
-G{Github}:::github --&gt; R(R scripts):::rscript
-G --&gt; TR(R _targets pipeline):::target
-G --&gt; eePy(Python Earth Engine):::earthEngine
-eePy --&gt; TR
+    subgraph RasterData[Raster Data]
+        Aerial[Aerial Imagery]
+        Landsat[Landsat]
+        Sentinel[Sentinel]
+        Flooded[Flooded Extents]
+        Wildfire[Wildfire Perimeters]
+        Depth[Water Depth]
+        RasterStacks[Raster Stacks]
+        sUAS[sUAS Multispectral Imagery]
+        DEMs[DEMs from sUAS]
+    end
 
-LAH(LADWP Hydro) --&gt; R
-R --&gt; MW[Monitoring Wells]:::monitoring --&gt; OV(OVGA):::ovga
-R --&gt; SW[Surface Water Flows]:::surfaceWater --&gt; OV
-R --&gt; PR[Production Volumes]:::production --&gt; OV
-R --&gt; pHYD[Parameterized Hydro Report]:::hydroReport
+    subgraph VectorData[Vector Data]
+        GreenBook[Vegetation Parcels]
+        Transects[Transects]
+        Wells[Monitoring Wells]
+        Mitigation[Mitigation Projects]
+        Springs[Springs]
+        Avian[Avian Surveys]
+        Classified[Classified Vectors from sUAS]
+    end
 
-ICH(Inyo Hydro) --&gt; Arc(ArcGIS-Python):::arcgis
-Arc --&gt; TR
+    subgraph RelatedTables[Related Tables]
+        TransectData[Transect Data]
+        WaterLevels[Water Levels]
+        MonitoringData[Monitoring Data]
+        AvianData[Avian Data]
+        SpringsData[Annual Monitoring Data]
+        DTW[Kriged DTW]
+        NDVI[Landsat NDVI]
+        StateTrans[State-and-Transition Model Dynamics]
+    end
 
-LAB(LADWP Bio) --&gt; TR
-ICB(Inyo Bio) --&gt; TR
+    %% Connections from GIS Assets
+    WD --&gt; SDE
+    WD --&gt; ImgServer
 
-TR --&gt; pBIO[Parameterized Vegetation Report]:::bioReport
-TR --&gt; sAP[Shiny Application]:::shinyApp
+    %% Connections for Raster Data
+    Aerial --&gt; ImgServer
+    Landsat --&gt; ImgServer
+    Sentinel --&gt; ImgServer
+    Flooded --&gt; ImgServer
+    Wildfire --&gt; ImgServer
+    Depth --&gt; ImgServer
+    RasterStacks --&gt; ImgServer
+    sUAS --&gt; ImgServer
+    DEMs --&gt; ImgServer
 
-G --&gt; D(Mitigation Revegetation Projects):::mitigation --&gt; mBIO[Parameterized Revegetation Report]:::mitigationReport
+    %% Connections for Vector Data
+    GreenBook --&gt; SDE
+    Transects --&gt; SDE
+    Wells --&gt; SDE
+    Mitigation --&gt; SDE
+    Springs --&gt; SDE
+    Avian --&gt; SDE
+    Classified --&gt; SDE
 
-G --&gt; eePy --&gt; FL(Flooded Acreage App):::floodedApp
+    %% Connections for Related Tables
+    TransectData --&gt; Transects
+    WaterLevels --&gt; Wells
+    MonitoringData --&gt; Mitigation
+    AvianData --&gt; Avian
+    SpringsData --&gt; Springs
+    DTW --&gt; GreenBook
+    NDVI --&gt; GreenBook
+    StateTrans --&gt; GreenBook
 
-classDef github fill:#ffcc00,stroke:#333,stroke-width:2px;
-classDef rscript fill:#ccffcc,stroke:#333,stroke-width:2px;
-classDef target fill:#ffcccc,stroke:#333,stroke-width:2px;
-classDef earthEngine fill:#ccccff,stroke:#333,stroke-width:2px;
-classDef monitoring fill:#ffffcc,stroke:#333,stroke-width:2px;
-classDef ovga fill:#ffccff,stroke:#333,stroke-width:2px;
-classDef surfaceWater fill:#ccffff,stroke:#333,stroke-width:2px;
-classDef production fill:#ffc0cb,stroke:#333,stroke-width:2px;
-classDef hydroReport fill:#e6e6fa,stroke:#333,stroke-width:2px;
-classDef arcgis fill:#add8e6,stroke:#333,stroke-width:2px;
-classDef bioReport fill:#98fb98,stroke:#333,stroke-width:2px;
-classDef shinyApp fill:#ffb6c1,stroke:#333,stroke-width:2px;
-classDef mitigation fill:#ffdead,stroke:#333,stroke-width:2px;
-classDef mitigationReport fill:#ffd700,stroke:#333,stroke-width:2px;
-classDef floodedApp fill:#afeeee,stroke:#333,stroke-width:2px;
+    %% Additional Connections
+    Transects --&gt; GreenBook
+    sUAS --&gt; Classified
+
+    %% Connections from Data Store and Image Server to ArcGIS Server
+    SDE --&gt; ArcServer
+    ImgServer --&gt; ArcServer
+
+    %% Connections to Applications
+    ArcServer --&gt; ArcPython
+    ArcServer --&gt; RBridge
+    ArcPython --&gt; GeoApps
+    RBridge --&gt; GeoApps
+    GeoApps --&gt; SummaryTables[Analytical Summary Tables]
+    SummaryTables --&gt; Quickbase
+
+    %% Additional Information
+    ArcServer --&gt; DeployR[Deploying R for ArcGIS Server]
+    DeployR --&gt; Config[All servers need to be set up individually]
+
+    ArcServer --&gt; Geemap[Geemap for ArcGIS Pro]
+    Geemap --&gt; GeoData[Supports loading Google EarthEngine data]
+
+    %% Class Definitions
+    classDef main fill:#f9f,stroke:#333,stroke-width:2px
+    classDef sde fill:#ccffcc,stroke:#333,stroke-width:2px
+    classDef imageServer fill:#ccffff,stroke:#333,stroke-width:2px
+    classDef arcServer fill:#ffccff,stroke:#333,stroke-width:2px
+    classDef apps fill:#ffcccc,stroke:#333,stroke-width:2px
+    classDef tools fill:#ffffcc,stroke:#333,stroke-width:2px
+    classDef relatedTables fill:#e6e6fa,stroke:#333,stroke-width:2px
+    classDef transparent fill:none,stroke:#333,stroke-width:2px
+
+    class RasterData transparent
+    class VectorData transparent
+    class RelatedTables transparent
 
 
 </pre>
@@ -337,11 +419,62 @@ classDef floodedApp fill:#afeeee,stroke:#333,stroke-width:2px;
 </div>
 </div>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;3: Create Github repositories for scientific code bases associated with Water Department scripting tools, data pipelines, applications and parameterized reports.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;3: Priority #3 - Integrate Water Department GIS assets into County ArcGIS Enterprise Server deployment. Decades of tabular data needs to be de-siloed and moved to ArcGIS spatial database engine (SDE) as a backend for analytical pipelines, spatial queries, analysis and applications.</figcaption>
+</figure>
+</div>
+<hr>
+<div id="fig-simple" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">graph TD
+    %% Main Nodes
+    AEM[AEM Data]
+    BasinChar[Basin Characterization]
+    GWModel[Updated Groundwater Models]
+    GWSim[Groundwater Modeling Simulations]
+    NoPumping[No Pumping Scenarios]
+    CausalModel[Causal Multivariate Models]
+    VegChange[Determination of Vegetation Change]
+    Mitigation[Mitigation Plans]
+    StateTrans[State-and-Transition Models]
+    RemoteSensing[Remote Sensing]
+    GreenBookMon[GreenBook Vegetation Monitoring]
+
+    %% Connections
+    AEM --&gt; BasinChar
+    BasinChar --&gt; GWModel
+    GWModel --&gt; GWSim
+    GWSim --&gt; NoPumping
+    GWSim --&gt; CausalModel
+    NoPumping --&gt; CausalModel
+    RemoteSensing --&gt; CausalModel
+    GreenBookMon --&gt; CausalModel
+    StateTrans --&gt; CausalModel
+    StateTrans --&gt; Mitigation
+    CausalModel --&gt; VegChange
+    VegChange --&gt; Mitigation
+
+    %% Class Definitions
+    classDef main fill:#f9f,stroke:#333,stroke-width:2px
+    classDef step fill:#ccffcc,stroke:#333,stroke-width:2px
+    classDef output fill:#ccffff,stroke:#333,stroke-width:2px
+
+    class AEM,BasinChar,GWModel,GWSim,NoPumping,CausalModel,VegChange,Mitigation,StateTrans,RemoteSensing,GreenBookMon main
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;4: Priority #4 - Groundwater modeling, Green Book dispute templates and decision support tools.</figcaption>
 </figure>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
